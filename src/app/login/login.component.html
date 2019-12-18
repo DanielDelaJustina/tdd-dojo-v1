@@ -1,0 +1,49 @@
+<form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+>
+  <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+    Email
+  </label>
+  <input
+    id="email"
+    type="email"
+    placeholder="Email"
+    formControlName="email"
+  />
+  <span
+    *ngIf="submitted && form.controls.email.invalid"
+    id="email-error"
+  >
+    Please enter a valid email.
+  </span>
+  <label
+    for="password"
+  >
+    Password
+  </label>
+  <input
+    id="password"
+    type="password"
+    placeholder="Password"
+    formControlName="password"
+  />
+  <span
+    *ngIf="submitted && form.controls.password.invalid"
+    id="password-error"
+  >
+    Please enter a valid password.
+  </span>
+  <button
+    type="submit"
+  >
+    Sign In
+  </button>
+  <a
+    href="#"
+  >
+    Forgot Password?
+  </a>
+</form>
+
